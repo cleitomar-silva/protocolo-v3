@@ -1,35 +1,113 @@
+
+
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+
 <main class="p-4 flex-grow-1">
 
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="h4 fw-bold">Bem-vindo ao Sistema de Gestão</h2>
-            <p class="text-secondary">Esta é a página inicial do sistema. Selecione uma opção no menu lateral.</p>
+            <div class="mb-4">
+                <h2 class="fw-bold mb-1">Sistema de Protocolo</h2>
+                <p class="text-muted mb-0">
+                    Gerencie processos, acompanhe pendências e monitore as atividades do sistema.
+                </p>
+            </div>
         </div>
     </div>
+
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Pendentes</small>
+                    <h3 class="fw-bold mb-0">124</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Em Andamento</small>
+                    <h3 class="fw-bold mb-0">89</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Bloqueados</small>
+                    <h3 class="fw-bold mb-0">560</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Recebidos hoje</small>
+                    <h3 class="fw-bold mb-0">12</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Recebidos</h5>
+
+                    <canvas id="graficoLinha" height="85"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body" >
+                    <h5>Situação</h5>
+
+                    <canvas id="graficoRosca" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
     <div class="row">
         <div class="col-lg-5">
-            <div class="card p-4 bg-white bg-dark">
-                <div class="card-header ">Buscar</div>
+            <div class="card border-0 shadow-sm h-100 bg-white bg-dark">
+                <div class="card-header bg-transparent border-0">
+                    Buscar
+                </div>
                 <div class="card-body">
-
                     <form action="principal.php" method="get" class="mb-5">
-
                         <div class="input-group">
-                            <input type="text" name="pesqProcesso" placeholder="Nº do processo, assunto, descrição ou nome da pessoa / interessado" class="form-control" required="true">
-                            <!-- <input type="submit" class="btn btn-info btn-flat btn-sm" value="Pesquisar"> -->
-                            <button type="submit" class="btn btn-info btn-modo-dark text-light">Pesquisar</button>
-                        </div>
-                        <input name="cod" type="hidden" id="cod" value="10">
+                            <input type="text" name="" placeholder="Pesquisar processo, assunto ou Pessoa" class="form-control" required="true">
 
+                            <button type="submit" class="btn btn-info btn-modo-dark text-light">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Pesquisar
+                            </button>
+                        </div>
                     </form>
 
                 </div>
             </div>
         </div>
         <div class="col-lg-7">
-            <div class="card bg-white bg-dark p-4 rounded shadow-sm mb-4">
-                <div class="card-header">
-                    Processos pendentes
+            <div class="card bg-white bg-dark border-0  h-100   rounded shadow-sm mb-4">
+                <div class="card-header bg-transparent border-0">
+                    <h6 class="mb-0 fw-semibold">
+                       <!-- <i class="fa-solid fa-clock "></i> -->
+                        Processos Pendentes
+                    </h6>
                 </div>
                 <div class="card-body">
                     <table class="table table-hover text-black txt-white">
@@ -103,11 +181,14 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-lg-12">
-            <div class="card bg-white bg-dark p-4 rounded shadow-sm mb-4">
-                <div class="card-header">
-                    Processos em andamento
+            <div class="card bg-white bg-dark border-0  h-100 rounded shadow-sm mb-4">
+                <div class="card-header bg-transparent border-0">
+                    <h6 class="mb-0 fw-semibold">
+                       <!-- <i class="fa-solid fa-hourglass-half"></i> --> Processos em andamento
+                    </h6>
+
                 </div>
                 <div class="card-body">
                     <table class="table table-hover text-black txt-white">
@@ -185,7 +266,72 @@
                         </ul>
                     </nav>
                 </div>
+            </div>
 
         </div>
     </div>
 </main>
+
+<script>
+    $(document).ready(function() {
+        const ctx = document.getElementById('graficoLinha');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan','Fev','Mar','Abr','Mai','Jun'],
+                datasets: [{
+                    label: 'Processos',
+                    data: [20,40,30,80,25,70],
+                    borderColor: '#5b21b6',
+                    tension: 0.4,
+                    fill: false
+                }]
+            }
+        });
+
+        const ctx2 = document.getElementById('graficoRosca');
+
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Pendentes',
+                    'Andamento',
+                    'Bloqueados',
+                    'Cancelados'
+                ],
+                datasets: [{
+                    data: [15, 25, 45, 15],
+                    backgroundColor: [
+                        '#f59e0b',
+                        '#22c55e',
+                        '#3b82f6',
+                        '#ef4444'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+
+                cutout: '85%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            boxWidth: 8,
+                            boxHeight: 8,
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+    });
+
+</script>

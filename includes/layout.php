@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestão (Bootstrap)</title>
+    <title>Protocolo</title>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- script -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
 <!-- Container Principal -->
@@ -25,7 +31,7 @@
             </a>
             <div>
                 <h1 class="h5 fw-bold text-white-50">
-                    <a href="./" class="text-decoration-none text-light">SistemaGestão</a>
+                    <a href="./" class="text-decoration-none text-light">Protocolo</a>
                 </h1>
                 <p class="small text-white-50 mb-0">v2.1.4</p>
             </div>
