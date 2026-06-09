@@ -294,7 +294,22 @@ body.menu-collapsed #main-content {
     color: var(--light-txt)!important;
 }
 
+.dark-mode table,
+.dark-mode table td,
+.dark-mode table th {
+    background-color: var(--dark-bg-sidebar) !important;
+    color: var(--light-txt) !important;
+    border-color: var(--border-color) !important;
+}
+
 .dark-mode .table-hover > tbody > tr:hover > * {
     color: var(--light-txt)!important;
     background-color: var(--border-color)!important;
 }
+
+.dark-mode form button.btn-modo-dark
+{
+    background-color: #5c636a!important;
+    border: unset;
+}
+

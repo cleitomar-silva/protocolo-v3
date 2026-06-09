@@ -5,24 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestão (Bootstrap)</title>
 
-    <!-- Bootstrap CSS -->
-   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!--
-    <link rel="stylesheet" href="assets/bootstrap-5.2.3/css/bootstrap.css">
-
-    <!- - Font Awesome (seus icones originais) - ->
-    <link rel="stylesheet" href="assets/fontawesome-free-7.1.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/fontawesome-free-7.1.0/css/brands.min.css">
-    <link rel="stylesheet" href="assets/fontawesome-free-7.1.0/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/fontawesome-free-7.1.0/css/regular.min.css">
-    <link rel="stylesheet" href="assets/fontawesome-free-7.1.0/css/solid.min.css">
-    -->
-
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-
 </head>
 <body>
 <!-- Container Principal -->
@@ -31,15 +16,17 @@
     <aside id="sidebar" class="text-white">
         <!-- Cabeçalho -->
         <div class="p-4 border-bottom border-secondary d-flex align-items-center gap-3 flex-shrink-0">
-            <div class="bg-info p-2 rounded">
+            <a href="./" class="bg-info p-2 rounded text-decoration-none text-light">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                     <polyline points="2 17 12 22 22 17"></polyline>
                     <polyline points="2 12 12 17 22 12"></polyline>
                 </svg>
-            </div>
+            </a>
             <div>
-                <h1 class="h5 fw-bold text-white-50">SistemaGestão</h1>
+                <h1 class="h5 fw-bold text-white-50">
+                    <a href="./" class="text-decoration-none text-light">SistemaGestão</a>
+                </h1>
                 <p class="small text-white-50 mb-0">v2.1.4</p>
             </div>
         </div>
@@ -171,89 +158,13 @@
             </div>
         </header>
 
-        <main class="p-4 flex-grow-1">
-            <div class="bg-white bg-dark p-4 rounded shadow-sm mb-4">
-                <h2 class="h4 fw-bold">Bem-vindo ao Sistema de Gestão</h2>
-                <p class="text-secondary">Esta é a página inicial do sistema. Selecione uma opção no menu lateral.</p>
-
-                <!-- manter exemplos de atividades recentes, simplificado -->
-                <table class="table table-hover text-black txt-white">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
+        <!-- conteudo pagina -->
+        <?php include $conteudo; ?>
 
 
-                </table>
-                <nav aria-label="Page navigation example" class="d-flex justify-content-end">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link text-black " href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link text-black " href="#">1</a></li>
-                        <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link text-black " href="#">3</a></li>
-                        <li class="page-item"><a class="page-link text-black " href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </main>
     </div>
+
 </div>
-
-<!-- Bootstrap JS (para uso futuro, não essencial para a lógica) -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
- <script src="assets/bootstrap-5.2.3/js/bootstrap.js"></script>
- -->
-
-
 
 
 <!-- script global -->

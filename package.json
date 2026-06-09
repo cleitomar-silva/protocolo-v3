@@ -19,6 +19,8 @@
   "homepage": "https://github.com/cleitomar-silva/protocolo-v3#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "datatables.net-bs5": "^2.3.8",
+    "jquery": "^4.0.0"
   }
 }
