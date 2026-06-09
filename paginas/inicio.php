@@ -76,11 +76,11 @@
             </div>
         </div>
         <div class="col-lg-7">
-            <div class="card shadow-sm ">
+            <div class="card shadow-sm bg-white bg-dark " >
                 <div class="card-body">
                     <h5>Recebidos</h5>
 
-                    <canvas id="graficoLinha" height="150"></canvas>
+                    <canvas id="graficoLinha" height="150" ></canvas>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
 
     <div class="row">
         <div class="col-lg-4">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm bg-white bg-dark">
                 <div class="card-body" >
                     <h5>Situação</h5>
 
