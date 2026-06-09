@@ -1,6 +1,6 @@
 
 
-<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+
 
 <main class="p-4 flex-grow-1">
 
@@ -173,8 +173,6 @@
                         </ul>
                     </nav>
                 </div>
-
-                <!-- manter exemplos de atividades recentes, simplificado -->
             </div>
         </div>
     </div>
@@ -269,6 +267,7 @@
     </div>
 </main>
 
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
 <script>
     $(document).ready(function() {
         const ctx = document.getElementById('graficoLinha');
