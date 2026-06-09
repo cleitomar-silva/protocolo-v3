@@ -56,31 +56,6 @@
 
 
     <div class="row mb-3">
-
-        <div class="col-lg-8">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5>Recebidos</h5>
-
-                    <canvas id="graficoLinha" height="85"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card shadow-sm">
-                <div class="card-body" >
-                    <h5>Situação</h5>
-
-                    <canvas id="graficoRosca" height="100"></canvas>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="row">
         <div class="col-lg-5">
             <div class="card border-0 shadow-sm h-100 bg-white bg-dark">
                 <div class="card-header bg-transparent border-0">
@@ -97,11 +72,33 @@
                             </button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
         <div class="col-lg-7">
+            <div class="card shadow-sm ">
+                <div class="card-body">
+                    <h5>Recebidos</h5>
+
+                    <canvas id="graficoLinha" height="150"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body" >
+                    <h5>Situação</h5>
+
+                    <canvas id="graficoRosca" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
             <div class="card bg-white bg-dark border-0  h-100   rounded shadow-sm mb-4">
                 <div class="card-header bg-transparent border-0">
                     <h6 class="mb-0 fw-semibold">
