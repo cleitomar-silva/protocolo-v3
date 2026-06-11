@@ -5,7 +5,7 @@ $rota = $_GET['rota'] ?? '';
 $paginas = [
     ''       => 'paginas/inicio.php',
     'inicio' => 'paginas/inicio.php',
-    'processos' => 'paginas/processos.php',
+    'processo-novo' => 'paginas/processo-novo.php',
     'chamados' => 'paginas/chamados.php',
 ];
 
