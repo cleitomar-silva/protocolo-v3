@@ -3,10 +3,11 @@
 $rota = $_GET['rota'] ?? '';
 
 $paginas = [
-    ''       => 'paginas/inicio.php',
-    'inicio' => 'paginas/inicio.php',
+    ''              => 'paginas/inicio.php',
+    'inicio'        => 'paginas/inicio.php',
+    'processo'      => 'paginas/processo.php',
     'processo-novo' => 'paginas/processo-novo.php',
-    'chamados' => 'paginas/chamados.php',
+    'chamados'      => 'paginas/chamados.php',
 ];
 
 if (isset($paginas[$rota])) {
