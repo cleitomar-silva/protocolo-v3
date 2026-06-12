@@ -64,7 +64,7 @@
                 <ul class="list-unstyled space-y-2">
                     <li><a href="processo-novo" class="submenu-item"><i class="fa-solid fa-plus fa-fw w-6"></i><span>Novo</span></a></li>
                     <li><a href="processo" class="submenu-item"><i class="fa-solid fa-magnifying-glass fa-fw w-6"></i><span>Pesquisa</span></a></li>
-                    <li><a href="#" class="submenu-item"><i class="fas fa-chart-pie fa-fw w-6"></i><span>Plano de contas</span></a></li>
+                    <li><a href="#" class="submenu-item"><i class="fa-solid fa-book"></i><span>Plano de contas</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-exchange-alt fa-fw w-6"></i><span>Movimentação em massa</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-chart-bar fa-fw w-6"></i><span>Relatório</span></a></li>
                 </ul>
