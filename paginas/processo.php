@@ -18,7 +18,7 @@
 
         .kanban-wrapper{
             display: flex;
-            gap: 16px;
+            gap: 10px;
             overflow-x: auto;
             align-items: flex-start;
             height: calc(100vh - 180px);
@@ -36,7 +36,7 @@
             max-width: 340px;
             background: #f5f6f8;
             border-radius: 12px;
-            padding: 12px;
+            /* padding: 12px; */
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
@@ -189,16 +189,34 @@
         }
 
         .border-secondary {
-            border-color: #6c757d !important;
+            border-color: #83878a !important;
+
         }
 
         .border-primary {
             border-color: #6f42c1 !important;
         }
+        .fs-14
+        {
+            font-size: 14px;
+        }
 
+        .fs-12
+        {
+            font-size: 12px;
+        }
 
-
-
+        .text-warning
+        {
+            color: #fd7e14 !important;
+        }
+        .text-primary
+        {
+            color: #6f42c1 !important;
+        }
+        .text-success {
+            color: #20c997 !important;
+        }
 
 
 
@@ -219,7 +237,7 @@
         <div class="kanban-column">
 
             <div class="kanban-header border-success">
-            <span>
+            <span class="fs-14 text-success">
                 Aprovação (<span class="count">2</span>)
             </span>
             </div>
@@ -227,172 +245,135 @@
             <div class="kanban-list" data-status="aprovacao">
 
                 <div class="kanban-card" data-id="1">
-                    <h6 class="fw-bold">Angela Smith</h6>
-
+                    <h6 class="fw-bold fs-14">Angela Smith</h6>
                     <span class="badge bg-light text-dark">
-                    Administrativo
-                </span>
-
-                    <div class="mt-3">
+                        Administrativo
+                    </span>
+                    <div class="mt-3 fs-12">
                         <small class="text-muted">
                             VALOR
                         </small>
-                        <h6>R$ 1.000,00</h6>
+                        <p><strong>R$ 1.000,00</strong></p>
                     </div>
                 </div>
-
                 <div class="kanban-card" data-id="2">
-                    <h6 class="fw-bold">João Coelho</h6>
-
+                    <h6 class="fw-bold fs-14">João Coelho</h6>
                     <span class="badge bg-light text-dark">
-                    Comercial
-                </span>
-
-                    <div class="mt-3">
+                        Comercial
+                    </span>
+                    <div class="mt-3 fs-12">
                         <small class="text-muted">
                             VALOR
                         </small>
-                        <h6>R$ 7.000,00</h6>
+                        <p><strong>R$ 7.000,00</strong></p>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <!-- INFORMAÇÕES FALTANTES -->
         <div class="kanban-column">
 
             <div class="kanban-header border-warning">
-            <span>
-                Informações Faltantes (<span class="count">2</span>)
-            </span>
+                <span class="fs-14 text-warning">
+                    Informações Faltantes (<span class="count">2</span>)
+                </span>
             </div>
-
             <div class="kanban-list" data-status="informacoes">
-
                 <div class="kanban-card" data-id="3">
-                    <h6 class="fw-bold">Douglas Splitter</h6>
-
+                    <h6 class="fw-bold fs-14">Douglas Splitter</h6>
                     <span class="badge bg-light text-dark">
-                    Comercial
-                </span>
-
-                    <div class="mt-3">
+                        Comercial
+                    </span>
+                    <div class="mt-3 fs-12">
                         <small class="text-muted">VALOR</small>
-                        <h6>R$ 2.000,00</h6>
+                        <p><strong>R$ 2.000,00</strong></p>
                     </div>
                 </div>
-
                 <div class="kanban-card" data-id="4">
-                    <h6 class="fw-bold">Patricia Meyer</h6>
-
+                    <h6 class="fw-bold fs-14">Patricia Meyer</h6>
                     <span class="badge bg-light text-dark">
-                    Financeiro
-                </span>
-
-                    <div class="mt-3">
+                        Financeiro
+                    </span>
+                    <div class="mt-3 fs-12">
                         <small class="text-muted">VALOR</small>
-                        <h6>R$ 8.000,00</h6>
+                        <p><strong>R$ 8.000,00</strong></p>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <!-- AGUARDANDO -->
         <div class="kanban-column">
 
             <div class="kanban-header border-secondary">
-            <span>
-                Aguardando Pagamento (<span class="count">2</span>)
-            </span>
+                <span class="fs-14 text-secondary">
+                    Aguardando Pagamento (<span class="count">2</span>)
+                </span>
             </div>
 
             <div class="kanban-list" data-status="aguardando">
-
                 <div class="kanban-card" data-id="5">
-                    <h6 class="fw-bold">Lucas Memphis</h6>
-
-                    <div class="mt-3">
-                        <h6>R$ 3.000,00</h6>
+                    <h6 class="fw-bold fs-14">Lucas Memphis</h6>
+                    <div class="mt-3 fs-12">
+                        <p><strong>R$ 3.000,00</strong></p>
                     </div>
                 </div>
-
                 <div class="kanban-card" data-id="6">
-                    <h6 class="fw-bold">Angela Duarte</h6>
-
-                    <div class="mt-3">
-                        <h6>R$ 9.000,00</h6>
+                    <h6 class="fw-bold fs-14">Angela Duarte</h6>
+                    <div class="mt-3 fs-12">
+                        <p><strong>R$ 9.000,00</strong></p>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <!-- PAGAMENTO -->
         <div class="kanban-column">
-
             <div class="kanban-header border-primary">
-            <span>
-                Pagamento (<span class="count">2</span>)
-            </span>
+                <span class="fs-14 text-primary">
+                    Pagamento (<span class="count">2</span>)
+                </span>
             </div>
-
             <div class="kanban-list" data-status="pagamento">
-
                 <div class="kanban-card" data-id="7">
-                    <h6 class="fw-bold">Anna Miller</h6>
-
-                    <div class="mt-3">
-                        <h6>R$ 4.000,00</h6>
+                    <h6 class="fw-bold fs-14">Anna Miller</h6>
+                    <div class="mt-3 fs-12">
+                        <p><strong>$ 4.000,00</strong></p>
                     </div>
                 </div>
-
                 <div class="kanban-card" data-id="8">
-                    <h6 class="fw-bold">Marcia Torres</h6>
-
-                    <div class="mt-3">
-                        <h6>R$ 10.000,00</h6>
+                    <h6 class="fw-bold fs-14">Marcia Torres</h6>
+                    <div class="mt-3 fs-12">
+                        <p> <strong>R$ 10.000,00</strong></p>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <!-- PAGO -->
         <div class="kanban-column">
-
             <div class="kanban-header border-success">
-            <span>
-                Pago (<span class="count">2</span>)
-            </span>
+                <span class="fs-14 text-success">
+                    Pago (<span class="count">2</span>)
+                </span>
             </div>
-
             <div class="kanban-list" data-status="pago">
-
                 <div class="kanban-card" data-id="9">
-                    <h6 class="fw-bold">Walter Chang</h6>
+                    <h6 class="fw-bold fs-14">Walter Chang</h6>
 
-                    <div class="mt-3">
-                        <h6>R$ 5.000,00</h6>
+                    <div class="mt-3 fs-12">
+                        <p> <strong>R$ 5.000,00</strong></p>
                     </div>
                 </div>
-
                 <div class="kanban-card" data-id="10">
                     <h6 class="fw-bold">Luiza Maria</h6>
                     <div class="mt-3">
                         <h6>R$ 11.000,00</h6>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
