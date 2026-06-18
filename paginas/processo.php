@@ -400,8 +400,91 @@
     }
 
 </style>
+<!-- css modal -->
+<style>
+    .filter-modal .modal-content{
+        border: none;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,.15);
+    }
 
-<header class="topbar">
+    .filter-modal .modal-header{
+        padding: 24px 28px 16px;
+        border-bottom: 1px solid #edf0f2;
+    }
+
+    .filter-modal .modal-body{
+        background: #f8fafc;
+        padding: 24px 28px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .filter-modal .modal-footer{
+        padding: 18px 28px;
+        border-top: 1px solid #edf0f2;
+        background: #fff;
+    }
+
+    .filter-title{
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .04em;
+        color: #64748b;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+    }
+
+    .filter-section{
+        background: white;
+        border-radius: 18px;
+        padding: 22px;
+        margin-bottom: 20px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .filter-modal .form-label{
+        font-size: 13px;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 8px;
+    }
+
+    .filter-modal .form-control,
+    .filter-modal .form-select{
+        height: 46px;
+        border-radius: 12px;
+        border: 1px solid #dbe2ea;
+    }
+
+    .filter-modal .form-control:focus,
+    .filter-modal .form-select:focus{
+        box-shadow: 0 0 0 .2rem rgba(13,110,253,.15);
+        border-color: #86b7fe;
+    }
+
+    .range-divider{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 46px;
+        font-size: 18px;
+        color: #94a3b8;
+    }
+
+    .btn-soft{
+        background: #f1f5f9;
+        border: none;
+        color: #475569;
+    }
+
+    .btn-soft:hover{
+        background: #e2e8f0;
+    }
+</style>
+
+<header class="topbar bg-white bg-dark">
     <div class="menu-left">
 
         <nav class="top-menu">
@@ -429,12 +512,12 @@
 
     <div class="menu-right">
         <form class="search-box" action="">
-            <input type="text"  placeholder="Procurar cards">
-            <button type="submit" class="search-btn">
+            <input type="text"  placeholder="Nº processo">
+            <button type="submit" class="search-btn" >
                 <i class="bi bi-search"></i>
             </button>
         </form>
-        <button type="button" class="filter-btn" title="Filtros">
+        <button type="button" class="filter-btn" title="Filtros" id="filter-btn">
             <i class="bi bi-funnel-fill"></i>
         </button>
     </div>
@@ -454,7 +537,6 @@
             </div>
 
             <div class="kanban-list" data-status="pendente">
-
                 <div class="kanban-card" data-id="1">
                     <h6 class="fw-bold fs-14">Recurso de Glosa</h6>
                     <span class="badge bg-light text-dark">
@@ -614,93 +696,388 @@
 
 </main>
 
+<!-- MODAL PESQUISA -->
+<!--
+<div class="modal fade" id="modal-pesquisa" tabindex="-1" aria-labelledby="modalPesquisaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalPesquisaLabel">
+                    Filtrar processos
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="form-filtro">
+                    <div class="row align-items-baseline">
+                        <div class="col-lg-2">
+                            <label for="">Abertura</label>
+                            <input class="form-control" autocomplete="off"  id="" name="" type="date" />
+                        </div>
+                        <div class="col-lg-1 align-items-end justify-content-center text-center">
+                            <span>Até</span>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input class="form-control " autocomplete="off"  id="" name="" type="date" />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <label for="">Previsão</label>
+                            <input class="form-control " autocomplete="off"  id="" name="" type="date" />
+                        </div>
+                        <div class="col-lg-1 align-items-end justify-content-center text-center">
+                            <span>Até</span>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input class="form-control" autocomplete="off"  id="" name="" type="date" />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <label for="">Nº Processo</label>
+                            <input type="number" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="row align-items-baseline">
+                        <div class="col-lg-2">
+                            <label for="">Situação</label>
+                            <select id=""  name="" class="form-control">
+                                <option selected disabled>Selecione</option>
+                                <option value="">Bloqueado</option>
+                                <option value="">Cancelar</option>
+                                <option value="">Em andamento</option>
+                                <option value="">Finalizado</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="">Assunto</label>
+                            <select id="" name="" class="form-control">
+                                <option selected disabled>Selecione</option>
+                                <option value="">CARTA DE MANUTENÇÃO DE INDICE</option>
+                                <option value="">ACORDO COLETIVO 2018 </option>
+                                <option value="">ALTERAÇÃO DA FORMA DE PAGAMENTO</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="">Pessoa/Interessado</label>
+                            <select id="" name="" class="form-control">
+                                <option selected disabled>Selecione</option>
+                                <option value="">Maria da cunha alves</option>
+                                <option value="">Jose Mario Silva </option>
+                                <option value="">Igor machado souza</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="">Origem</label>
+                            <select id="" name="" class="form-control">
+                                <option selected disabled>Selecione</option>
+                                <option value="">Auditoria de Enfermagem</option>
+                                <option value="">Cadastro</option>
+                                <option value="">Normas e Regulamentação</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row align-items-baseline">
+                        <div class="col-lg-3">
+                            <label for="">Localização atual</label>
+                            <select id="" name="" class="form-control">
+                                <option selected disabled>Selecione</option>
+                                <option value="">Auditoria de Enfermagem</option>
+                                <option value="">Cadastro</option>
+                                <option value="">Normas e Regulamentação</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <label for="">Agenda financeira</label>
+                            <input class="form-control" autocomplete="off"  id="" name="" type="date" />
+                        </div>
+                        <div class="col-lg-1 align-items-end justify-content-center text-center">
+                            <span>Até</span>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for=""></label>
+                                <input class="form-control " autocomplete="off"  id="" name="" type="date" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-light" form="form-filtro">
+                    Limpar
+                </button>
+                <button type="submit" class="btn btn-primary" form="form-filtro">
+                    Aplicar filtro
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div class="modal fade filter-modal" id="modal-pesquisa" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div>
+                    <h4 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                        <i class="bi bi-funnel-fill text-primary"></i>
+                        Filtrar Processos
+                    </h4>
+                    <small class="text-muted">
+                        Refine sua busca usando um ou mais filtros
+                    </small>
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="form-filtro">
+
+                    <!-- Períodos -->
+                    <div class="filter-section">
+                        <div class="filter-title">Períodos</div>
+
+                        <div class="row g-3">
+                            <div class="col-lg-5">
+                                <label class="form-label">Abertura (de)</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="range-divider">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <label class="form-label">Abertura (até)</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-5">
+                                <label class="form-label">Previsão (de)</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="range-divider">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <label class="form-label">Previsão (até)</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-5">
+                                <label class="form-label">Agenda Financeira (de)</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="range-divider">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <label class="form-label">Agenda Financeira (até)</label>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processo -->
+                    <div class="filter-section">
+                        <div class="filter-title">Dados do Processo</div>
+
+                        <div class="row g-3">
+                            <div class="col-lg-3">
+                                <label class="form-label">Nº Processo</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class="form-label">Situação</label>
+                                <select class="form-select">
+                                    <option selected disabled>Selecione</option>
+                                    <option>Bloqueado</option>
+                                    <option>Cancelado</option>
+                                    <option>Em andamento</option>
+                                    <option>Finalizado</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label">Assunto</label>
+                                <select class="form-select">
+                                    <option selected disabled>Selecione</option>
+                                    <option>CARTA DE MANUTENÇÃO DE INDICE</option>
+                                    <option>ACORDO COLETIVO 2018</option>
+                                    <option>ALTERAÇÃO DA FORMA DE PAGAMENTO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relacionamentos -->
+                    <div class="filter-section">
+                        <div class="filter-title">Relacionamentos</div>
+
+                        <div class="row g-3">
+                            <div class="col-lg-4">
+                                <label class="form-label">Pessoa / Interessado</label>
+                                <select class="form-select">
+                                    <option selected disabled>Selecione</option>
+                                    <option>Maria da Cunha Alves</option>
+                                    <option>José Mario Silva</option>
+                                    <option>Igor Machado Souza</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Origem</label>
+                                <select class="form-select">
+                                    <option selected disabled>Selecione</option>
+                                    <option>Auditoria de Enfermagem</option>
+                                    <option>Cadastro</option>
+                                    <option>Normas e Regulamentação</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label class="form-label">Localização Atual</label>
+                                <select class="form-select">
+                                    <option selected disabled>Selecione</option>
+                                    <option>Auditoria de Enfermagem</option>
+                                    <option>Cadastro</option>
+                                    <option>Normas e Regulamentação</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-soft px-4" form="form-filtro">
+                    <i class="bi bi-eraser me-1"></i>
+                    Limpar
+                </button>
+
+                <button type="submit" class="btn btn-primary px-4" form="form-filtro">
+                    <i class="bi bi-search me-1"></i>
+                    Aplicar filtros
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <script src="node_modules/sortablejs/Sortable.min.js"></script>
-
-
 <script>
 
 
 
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-        const lists = document.querySelectorAll('.kanban-list');
 
-        lists.forEach(list => {
+    $( "#filter-btn" ).on( "click", function() {
 
-            new Sortable(list, {
-
-                group: 'kanban',
-
-                animation: 200,
-
-                ghostClass: 'sortable-ghost',
-
-                dragClass: 'sortable-drag',
-
-                onMove(evt) {
-
-                    document
-                        .querySelectorAll('.kanban-list')
-                        .forEach(el => el.classList.remove('drag-over'));
-
-                    evt.to.classList.add('drag-over');
-                },
-
-                onEnd(evt) {
-
-                    document
-                        .querySelectorAll('.kanban-list')
-                        .forEach(el => el.classList.remove('drag-over'));
-
-                    atualizarContadores();
-
-                    const cardId = evt.item.dataset.id;
-                    const novoStatus = evt.to.dataset.status;
-                    const posicao = evt.newIndex;
-
-                    console.log({
-                        cardId,
-                        novoStatus,
-                        posicao
-                    });
-
-                    // Exemplo para salvar no backend
-                    /*
-                    fetch('/processos/mover', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            id: cardId,
-                            status: novoStatus,
-                            posicao: posicao
-                        })
-                    });
-                    */
-                }
-
-            });
-
-        });
-
-        atualizarContadores();
+        $("#modal-pesquisa").modal("show");
 
     });
 
-    function atualizarContadores() {
+    const lists = document.querySelectorAll('.kanban-list');
 
-        document
-            .querySelectorAll('.kanban-column')
-            .forEach(coluna => {
+    lists.forEach(list => {
 
-                const total =
-                    coluna.querySelectorAll('.kanban-card').length;
+        new Sortable(list, {
 
-                coluna.querySelector('.count').textContent = total;
+            group: 'kanban',
 
-            });
-    }
+            animation: 200,
+
+            ghostClass: 'sortable-ghost',
+
+            dragClass: 'sortable-drag',
+
+            onMove(evt) {
+
+                document
+                    .querySelectorAll('.kanban-list')
+                    .forEach(el => el.classList.remove('drag-over'));
+
+                evt.to.classList.add('drag-over');
+            },
+
+            onEnd(evt) {
+
+                document
+                    .querySelectorAll('.kanban-list')
+                    .forEach(el => el.classList.remove('drag-over'));
+
+                atualizarContadores();
+
+                const cardId = evt.item.dataset.id;
+                const novoStatus = evt.to.dataset.status;
+                const posicao = evt.newIndex;
+
+                console.log({
+                    cardId,
+                    novoStatus,
+                    posicao
+                });
+
+                // Exemplo para salvar no backend
+                /*
+                fetch('/processos/mover', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: cardId,
+                        status: novoStatus,
+                        posicao: posicao
+                    })
+                });
+                */
+            }
+
+        });
+
+    });
+
+    atualizarContadores();
+
+});
+
+function atualizarContadores() {
+
+    document
+        .querySelectorAll('.kanban-column')
+        .forEach(coluna => {
+
+            const total =
+                coluna.querySelectorAll('.kanban-card').length;
+
+            coluna.querySelector('.count').textContent = total;
+
+        });
+}
 
 </script>
 

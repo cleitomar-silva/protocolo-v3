@@ -174,6 +174,7 @@
 
 
 <!-- script global -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // Mesmo JavaScript original, adaptado para as novas classes CSS
     let menuVisible = true;

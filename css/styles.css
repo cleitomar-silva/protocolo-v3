@@ -284,11 +284,29 @@ body.menu-collapsed #main-content {
     color: var(--light-txt)!important;
 }
 
+
+.dark-mode .filter-title,
+.dark-mode .form-label,
+.dark-mode .filter-section,
+.dark-mode .modal-content,
+.dark-mode .kanban-header,
+.dark-mode  small,
+.dark-mode .kanban-card,
+.dark-mode .bg-dark a,
 .dark-mode .bg-dark
 {
     background-color: var(--dark-bg-sidebar)!important;
     border-color: var(--border-color)!important;
-    color: var(--light-txt)!important;;
+    color: var(--light-txt)!important;
+    --bs-btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode  .modal-footer,
+.dark-mode  .modal-body,
+.dark-mode  .kanban-column
+{
+    background-color: var(--dark-bg)!important;
+
 }
 
 .dark-mode .txt-white
