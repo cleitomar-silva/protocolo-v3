@@ -168,7 +168,9 @@
     }
 
     .sortable-ghost {
-        opacity: .4;
+        /* opacity: .4; */
+        opacity: 1;
+
     }
 
     .sortable-drag {
@@ -399,14 +401,19 @@
         transform: scale(.97);
     }
 
+
 </style>
 <!-- css modal -->
 <style>
     .filter-modal .modal-content{
+
+        box-shadow: 0 25px 60px rgba(0,0,0,.15);
+        height: calc(100vh - 32px);
         border: none;
         border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 25px 60px rgba(0,0,0,.15);
+        display: flex;
+        flex-direction: column;
     }
 
     .filter-modal .modal-header{
@@ -418,6 +425,7 @@
         background: #f8fafc;
         padding: 24px 28px;
         max-height: 70vh;
+        flex: 1;
         overflow-y: auto;
     }
 
@@ -482,6 +490,278 @@
     .btn-soft:hover{
         background: #e2e8f0;
     }
+
+    .filter-modal .modal-dialog {
+        height: 100vh;
+        max-height: 100vh;
+        margin: 0 auto;
+        padding: 16px;
+    }
+
+
+
+</style>
+<!-- modal conteudo -->
+<style>
+
+    .modal-processo .modal-full-custom{
+        width: calc(100vw - 40px);
+        max-width: none;
+        height: calc(100vh - 20px);
+        margin: 10px auto;
+    }
+
+    .modal-processo .modal-content{
+        height: 100%;
+        border: none;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .modal-processo .modal-close{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        z-index: 20;
+    }
+
+    .process-layout{
+        display: grid;
+        grid-template-columns: 44% 36% 20%;
+        height: 100%;
+    }
+
+    .process-left,
+    .process-center,
+    .process-right{
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .process-left{
+        background: white;
+    }
+
+    .process-center{
+        background: #ffffff;
+        border-left: 1px solid #e5e7eb;
+    }
+
+    .process-right{
+        background: #ffffff;
+        border-left: 1px solid #e5e7eb;
+    }
+
+    .form-control,
+    .form-select{
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    textarea.form-control{
+        height: auto;
+    }
+
+    .btn-phase{
+        height: 50px;
+        border-radius: 999px;
+        border: 1px solid #c4b5fd;
+        background: #ede9fe;
+        color: #5b21b6;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-phase-danger{
+        height: 50px;
+        border-radius: 999px;
+        border: 1px solid #fecaca;
+        background: #fef2f2;
+        color: #dc2626;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* mobile */
+    @media (max-width: 992px){
+        .process-layout{
+            grid-template-columns: 1fr;
+        }
+
+        .process-right,
+        .process-center{
+            border-left: none;
+            border-top: 1px solid #e5e7eb;
+        }
+    }
+
+    .history-card{
+        border: 1px solid #d9e2ec;
+        border-radius: 10px;
+        padding: 18px;
+        margin-bottom: 14px;
+        background: #fff;
+    }
+
+    .history-badge{
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .history-badge.warning{
+        background: #fff7ed;
+        color: #f59e0b;
+    }
+
+    .history-badge.primary{
+        background: #eff6ff;
+        color: #0d6efd;
+    }
+
+    .upload-box{
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 60px 30px;
+        background: #fafcff;
+        transition: .2s;
+    }
+
+    .upload-box:hover{
+        border-color: #0d6efd;
+        background: #f8fbff;
+    }
+
+    .upload-icon{
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        border-radius: 50%;
+        background: #eff6ff;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .upload-icon i{
+        font-size: 42px;
+        color: #0d6efd;
+    }
+
+    .fs-20
+    {
+        font-size: 20px;
+    }
+
+    .fs-16
+    {
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .info-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .info-card{
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 16px;
+        transition: .25s;
+    }
+
+    .info-card:hover{
+        box-shadow: 0 8px 24px rgba(0,0,0,.06);
+        transform: translateY(-2px);
+    }
+
+    .info-label{
+        font-size: 12px;
+        font-weight: 700;
+        color: #64748b;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .info-value{
+        font-size: 14px;
+        color: #0f172a;
+        font-weight: 600;
+    }
+
+    .status-badge{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: #fff7ed;
+        color: #ea580c;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .description-box{
+        margin-top: 20px;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 20px;
+    }
+
+    .section-title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 18px;
+    }
+
+    .process-header{
+        background: linear-gradient(135deg,#4f46e5,#7c3aed);
+        color: white;
+        padding: 24px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 12px 30px rgba(79,70,229,.18);
+    }
+
+    .process-subtitle{
+        color: rgba(255,255,255,.8);
+        font-size: 14px;
+    }
+
+
+
+
 </style>
 
 <header class="topbar bg-white bg-dark">
@@ -697,129 +977,6 @@
 </main>
 
 <!-- MODAL PESQUISA -->
-<!--
-<div class="modal fade" id="modal-pesquisa" tabindex="-1" aria-labelledby="modalPesquisaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalPesquisaLabel">
-                    Filtrar processos
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
-                <form id="form-filtro">
-                    <div class="row align-items-baseline">
-                        <div class="col-lg-2">
-                            <label for="">Abertura</label>
-                            <input class="form-control" autocomplete="off"  id="" name="" type="date" />
-                        </div>
-                        <div class="col-lg-1 align-items-end justify-content-center text-center">
-                            <span>Até</span>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <label for=""></label>
-                                <input class="form-control " autocomplete="off"  id="" name="" type="date" />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <label for="">Previsão</label>
-                            <input class="form-control " autocomplete="off"  id="" name="" type="date" />
-                        </div>
-                        <div class="col-lg-1 align-items-end justify-content-center text-center">
-                            <span>Até</span>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <label for=""></label>
-                                <input class="form-control" autocomplete="off"  id="" name="" type="date" />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <label for="">Nº Processo</label>
-                            <input type="number" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="row align-items-baseline">
-                        <div class="col-lg-2">
-                            <label for="">Situação</label>
-                            <select id=""  name="" class="form-control">
-                                <option selected disabled>Selecione</option>
-                                <option value="">Bloqueado</option>
-                                <option value="">Cancelar</option>
-                                <option value="">Em andamento</option>
-                                <option value="">Finalizado</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-4">
-                            <label for="">Assunto</label>
-                            <select id="" name="" class="form-control">
-                                <option selected disabled>Selecione</option>
-                                <option value="">CARTA DE MANUTENÇÃO DE INDICE</option>
-                                <option value="">ACORDO COLETIVO 2018 </option>
-                                <option value="">ALTERAÇÃO DA FORMA DE PAGAMENTO</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3">
-                            <label for="">Pessoa/Interessado</label>
-                            <select id="" name="" class="form-control">
-                                <option selected disabled>Selecione</option>
-                                <option value="">Maria da cunha alves</option>
-                                <option value="">Jose Mario Silva </option>
-                                <option value="">Igor machado souza</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3">
-                            <label for="">Origem</label>
-                            <select id="" name="" class="form-control">
-                                <option selected disabled>Selecione</option>
-                                <option value="">Auditoria de Enfermagem</option>
-                                <option value="">Cadastro</option>
-                                <option value="">Normas e Regulamentação</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row align-items-baseline">
-                        <div class="col-lg-3">
-                            <label for="">Localização atual</label>
-                            <select id="" name="" class="form-control">
-                                <option selected disabled>Selecione</option>
-                                <option value="">Auditoria de Enfermagem</option>
-                                <option value="">Cadastro</option>
-                                <option value="">Normas e Regulamentação</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-2">
-                            <label for="">Agenda financeira</label>
-                            <input class="form-control" autocomplete="off"  id="" name="" type="date" />
-                        </div>
-                        <div class="col-lg-1 align-items-end justify-content-center text-center">
-                            <span>Até</span>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <label for=""></label>
-                                <input class="form-control " autocomplete="off"  id="" name="" type="date" />
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="reset" class="btn btn-light" form="form-filtro">
-                    Limpar
-                </button>
-                <button type="submit" class="btn btn-primary" form="form-filtro">
-                    Aplicar filtro
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
--->
 <div class="modal fade filter-modal" id="modal-pesquisa" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
@@ -985,11 +1142,229 @@
     </div>
 </div>
 
+<!-- MODAL CONTEUDO CARD -->
+<div class="modal fade modal-processo" id="modal-detalhe" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-full-custom">
+        <div class="modal-content">
+
+            <button class="btn-close modal-close" data-bs-dismiss="modal"></button>
+
+            <div class="process-layout">
+
+                <!-- COLUNA ESQUERDA -->
+                <div class="process-left">
+                    <div class="p-4">
+
+                        <!-- HEADER -->
+                        <div class="process-header">
+                            <h3 class="fw-bold mb-2 fs-20">
+                                Lista de Assinaturas - Assembléia Alteração do Estatuto
+                            </h3>
+
+                            <div class="process-subtitle">
+                                Criado por Cleiton Rodrigues • 18/06/2026 16:14
+                            </div>
+                        </div>
+
+                        <!-- STATUS -->
+                        <div class="mb-4">
+                            <span class="status-badge">
+                                <i class="bi bi-kanban"></i>
+                                Em andamento
+                            </span>
+                        </div>
+
+                        <!-- GRID -->
+                        <div class="info-grid">
+
+                            <div class="info-card">
+                                <div class="info-label">
+                                    <i class="bi bi-hash"></i> Processo
+                                </div>
+                                <div class="info-value">202402070036</div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-label">
+                                    <i class="bi bi-diagram-3"></i> Origem
+                                </div>
+                                <div class="info-value">Diretoria</div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-label">
+                                    <i class="bi bi-building"></i> Empresa
+                                </div>
+                                <div class="info-value">CAFAZ Saúde</div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-label">
+                                    <i class="bi bi-calendar-event"></i> Previsão
+                                </div>
+                                <div class="info-value">20/08/2025</div>
+                            </div>
+
+                        </div>
+
+                        <!-- PESSOA -->
+                        <div class="description-box">
+                            <div class="section-title">
+                                <i class="bi bi-person-badge"></i>
+                                Pessoa / Interessado
+                            </div>
+
+                            <div class="text-muted">
+                                TALLOS TECNOLOGIA INTEGRADA E ASSESSORIA EM NEGÓCIOS LTDA -
+                                28.688.116/0001-84
+                            </div>
+                        </div>
+
+                        <!-- DESCRIÇÃO -->
+                        <div class="description-box">
+                            <div class="section-title">
+                                <i class="bi bi-card-text"></i>
+                                Descrição
+                            </div>
+
+                            <div class="text-muted">
+                                Renovação contratual do serviço de Chatbot — Tallos Licença de uso,
+                                usuários adicionais, API oficial e serviço de mensageria via WhatsApp.
+                                Contrato com vencimento em 22/03/2024.
+                            </div>
+                        </div>
+                        <!-- ATTACHMENTS -->
+                        <div class="mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="fw-bold mb-0 fs-16">Anexo</h4>
+                                <button class="btn btn-sm">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                            </div>
+                            <div class="upload-box text-center">
+                                <div class="upload-icon mb-4">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                </div>
+
+                                <p class="text-muted mb-4">
+                                    Arraste e solte arquivos do seu computador ou selecione-os para anexá-los a este cartão.
+                                </p>
+
+                                <input type="file" id="upload-file" hidden multiple>
+
+                                <button class="btn btn-primary px-4"
+                                        onclick="document.getElementById('upload-file').click()">
+                                    Arquivo
+                                </button>
+                            </div>
+                        </div>
+                        <!-- HISTORY -->
+                        <div class="mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="fw-bold mb-0 fs-16">Histórico</h4>
+                            </div>
+
+                            <div class="history-card">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="history-badge warning">Inbox</span>
+                                    <strong>Jul 12</strong>
+                                </div>
+
+                                <div class="text-muted small mb-3">17 days</div>
+
+                                <button class="btn btn-link p-0 text-decoration-none small">
+                                    <i class="bi bi-chevron-down"></i>
+                                    Show more
+                                </button>
+                            </div>
+
+                            <div class="history-card">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="history-badge primary">Approval</span>
+                                    <strong>Jul 30</strong>
+                                </div>
+
+                                <div class="text-muted small">4 years</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- COLUNA CENTRAL -->
+                <div class="process-center">
+                    <div class="p-4">
+                        <small class="text-primary fw-semibold">
+                            From HR Requests - Remote
+                        </small>
+
+                        <div class="mt-4">
+                            <h4 class="fw-bold">
+                                Current phase
+                                <span class="badge bg-primary-subtle text-primary ms-2">
+                                    Approval
+                                </span>
+                            </h4>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-4">
+                            <h4>Approver</h4>
+
+                            <button class="btn btn-link text-decoration-none p-0 mt-3">
+                                + Add assignee
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA -->
+                <div class="process-right">
+                    <div class="p-4">
+                        <h4 class="fw-bold mb-4">Move card to phase</h4>
+
+                        <button class="btn btn-phase w-100 mb-3">
+                            Doing
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <button class="btn btn-phase-danger w-100">
+                            Archived
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <hr class="my-4">
+
+                        <button class="btn btn-outline-secondary w-100 mb-4">
+                            <i class="bi bi-arrow-left"></i>
+                            Inbox
+                        </button>
+
+                        <div class="d-flex flex-column gap-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                Move card settings
+                            </a>
+
+                            <a href="#" class="text-decoration-none">
+                                Move cards with AI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="node_modules/sortablejs/Sortable.min.js"></script>
 <script>
 
-
+//
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -999,6 +1374,31 @@ document.addEventListener('DOMContentLoaded', () => {
         $("#modal-pesquisa").modal("show");
 
     });
+
+    $(document).on("click", ".kanban-card", function() {
+
+        $("#modal-detalhe").modal("show");
+
+    });
+
+    const uploadBox = document.querySelector('.upload-box');
+
+    uploadBox.addEventListener('dragover', e => {
+        e.preventDefault();
+        uploadBox.style.borderColor = '#0d6efd';
+    });
+
+    uploadBox.addEventListener('dragleave', () => {
+        uploadBox.style.borderColor = '#cbd5e1';
+    });
+
+    uploadBox.addEventListener('drop', e => {
+        e.preventDefault();
+        const files = e.dataTransfer.files;
+        console.log(files);
+    });
+
+
 
     const lists = document.querySelectorAll('.kanban-list');
 
