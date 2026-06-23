@@ -746,16 +746,20 @@
     }
 
     .process-header{
-        background: linear-gradient(135deg,#4f46e5,#7c3aed);
-        color: white;
+        /* background: linear-gradient(135deg,#4f46e5,#7c3aed); */
+        background: linear-gradient(135deg, #ffffff, #ffffff);
+        /* color: white; */
+        color: #000000;
         padding: 24px;
         border-radius: 20px;
         margin-bottom: 20px;
         box-shadow: 0 12px 30px rgba(79,70,229,.18);
     }
 
-    .process-subtitle{
-        color: rgba(255,255,255,.8);
+    .process-subtitle
+    {
+        color: rgb(0 0 0 / 80%);
+       /* color: rgba(255,255,255,.8); */
         font-size: 14px;
     }
 

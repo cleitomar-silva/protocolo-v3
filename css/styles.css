@@ -283,8 +283,11 @@ body.menu-collapsed #main-content {
     border-color: var(--border-color);
     color: var(--light-txt)!important;
 }
-
-
+.dark-mode .file-item,
+.dark-mode .description-box,
+.dark-mode .process-right,
+.dark-mode .process-center,
+.dark-mode .process-left,
 .dark-mode .filter-title,
 .dark-mode .form-label,
 .dark-mode .filter-section,
@@ -298,6 +301,12 @@ body.menu-collapsed #main-content {
     background-color: var(--dark-bg-sidebar)!important;
     border-color: var(--border-color)!important;
     color: var(--light-txt)!important;
+    --bs-btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+
+.dark-mode .modal-close
+{
     --bs-btn-close-filter: invert(1) grayscale(100%) brightness(200%);
 }
 

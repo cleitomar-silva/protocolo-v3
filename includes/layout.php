@@ -78,7 +78,7 @@
             <nav class="p-3 menu-scrollbar overflow-auto">
                 <ul class="list-unstyled space-y-2">
                     <li><a href="#" class="submenu-item"><i class="fas fa-plus fa-fw w-6"></i><span>Novo</span></a></li>
-                    <li><a href="#" class="submenu-item"><i class="fas fa-search fa-fw w-6"></i><span>Pesquisa</span></a></li>
+                    <li><a href="chamados" class="submenu-item"><i class="fas fa-search fa-fw w-6"></i><span>Pesquisa</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-chart-line fa-fw w-6"></i><span>Indicadores</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-tags fa-fw w-6"></i><span>Tipos de chamado</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-info-circle fa-fw w-6"></i><span>Situação de Chamado</span></a></li>
@@ -93,7 +93,7 @@
             </div>
             <nav class="p-3 menu-scrollbar overflow-auto">
                 <ul class="list-unstyled space-y-2">
-                    <li><a href="#" class="submenu-item"><i class="fas fa-user fa-fw w-6"></i><span>Pessoa</span></a></li>
+                    <li><a href="#" class="submenu-item"><i class="fas fa-user fa-fw w-6"></i><span>Usuários</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-building fa-fw w-6"></i><span>Setor</span></a></li>
                     <li><a href="#" class="submenu-item"><i class="fas fa-sticky-note fa-fw w-6"></i><span>Assunto</span></a></li>
                 </ul>
