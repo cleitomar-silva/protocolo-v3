@@ -1443,6 +1443,18 @@
                         <form id="form-apontamentos">
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <label class="form-label">Tipo de Apontamento</label>
+                                    <select class="form-select">
+                                        <option selected disabled>Selecione</option>
+                                        <option>Em andamento</option>
+                                        <option>Concluido</option>
+                                        <option>Cancelar</option>
+                                        <option>Solicitar validação</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="fw-700-c-black-fs-16" for="comentarios-insert"></label>
                                         <textarea class="form-control" id="comentarios-insert" rows="5" maxlength="500" required></textarea>
@@ -1510,6 +1522,7 @@
 
                 <!-- COLUNA DIREITA -->
                 <div class="process-right">
+                   <!--
                     <div class="p-4">
                         <h4 class="fw-bold mb-4">Situação</h4>
 
@@ -1527,10 +1540,10 @@
 
 
                         <div class="d-flex flex-column gap-3">
-                            <!--
+                            <!- -
                             <a href="#" class="text-decoration-none text-dark txt-white">
                                 Movimentar chamado
-                            </a> -->
+                            </a> - ->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label class="form-label"></label>
@@ -1546,7 +1559,7 @@
 
 
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
